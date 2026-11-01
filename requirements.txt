@@ -1,0 +1,15 @@
+torch
+pandas
+matplotlib
+seaborn
+wordcloud
+nltk
+numpy
+flask
+vaderSentiment
+transformers
+scikit-learn
+tqdm
+joblib
+pillow
+xgboost

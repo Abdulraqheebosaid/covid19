@@ -1,0 +1,99 @@
+{% include "header_admin.html" %}
+<div class="container">
+    <form action="http://localhost:5000/eval_alg" method="post">
+    <table> <tr><td style="vertical-align: top">
+   <div id="menu">
+  <ul>
+    <li onclick="hide_lr()">Linear Regression</li>
+    <li onclick="hide_svr()">Support Vector Regression</li>
+    <li onclick="hide_rr()">Ridge Regression</li>
+    <li onclick="hide_ca()">Compare Algorithms</li>
+
+  </ul>
+</div></td>
+        <td>
+
+<div class="lds-ripple" id="gear" style="display: none; margin: 150px"><div></div><div></div></div>
+<div id="AccDisplay"></div>
+     </td>
+</tr>
+</table>
+<div id="LR" style="display: none">
+        <img src="../static/vis/LR.png"><br>
+            <p style="color: maroon; font-size: large; background-color: #E9E9E9"> CV Score for Linear Regression Algorithm : {{acc['LR']}}%</p>
+        </div>
+
+        <div id="SVR" style="display: none">
+            <img src="../static/vis/SVR.png"><br>
+         <p style="color: maroon; font-size: large; background-color: #E9E9E9">   CV Score for Support Vector Regressor Algorithm : {{acc['SVR']}}%</p>
+        </div>
+        <div id="RR" style="display: none">
+            <img src="../static/vis/R.png"><br>
+         <p style="color: maroon; font-size: large; background-color: #E9E9E9">CV Score for Ridge Regressor Algorithm : {{acc['RR']}}%</p>
+        </div>
+
+        <div id="CA" style="display: none">
+            <img src="../static/vis/cvscore.jpg" width="800px" height="300px"><br>
+        </div>
+</form>
+</div>
+
+	</div>
+
+<script>
+var myVar;
+
+function hide_lr() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_lr, 1500);
+}
+function show_lr() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('LR').innerHTML;
+}
+
+
+function hide_svr() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_svr, 1500);
+}
+function show_svr() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('SVR').innerHTML;
+}
+
+
+function hide_rr() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_rr, 1500);
+}
+function show_rr() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('RR').innerHTML;
+}
+
+
+
+
+
+
+function hide_ca() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_ca, 1500);
+}
+function show_ca() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('CA').innerHTML;
+}
+</script>
+</body>
+
+</html>

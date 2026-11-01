@@ -1,0 +1,116 @@
+{% include "header_admin.html" %}
+<div class="container">
+    <table> <tr><td style="vertical-align: top">
+   <div id="menu">
+  <ul>
+    <li onclick="hide_mcc()">Tweet Activity over time</li>
+    <li onclick="hide_mcd()">Frequent Words</li>
+    <li onclick="hide_mcr()">Sentiment Distribution</li>
+    <li onclick="hide_adc()">Hashtag Analysis</li>
+    <li onclick="hide_udc()">Geographic Distribution of Tweets</li>
+
+
+  </ul>
+</div></td>
+        <td>
+
+<div class="lds-ripple" id="loader" style="display: none; margin: 150px"><div></div><div></div></div>
+<div id="AccDisplay"></div>
+     </td>
+</tr>
+</table>
+<div id="mcc" style="display: none">
+     <img src="../static/vis/tweetcnt.jpg"  width="600px" height="300px">
+</div>
+
+<div id="mcd" style="display: none">
+     <img src="../static/vis/freqwords.jpg"  width="600px" height="300px">
+</div>
+
+<div id="mcr" style="display: none">
+     <img src="../static/vis/sentidist.jpg"  width="600px" height="300px">
+</div>
+
+<div id="adc" style="display: none">
+     <img src="../static/vis/hashfreq.jpg"  width="600px" height="300px">
+</div>
+
+<div id="udc" style="display: none">
+     <img src="../static/vis/tweetloccnt.jpg"  width="600px" height="300px">
+</div>
+
+
+</div>
+
+	</div>
+
+<script>
+var myVar;
+
+function hide_mcc() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_mcc, 1500);
+}
+
+function show_mcc() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('mcc').innerHTML;
+}
+
+function hide_mcd() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_mcd, 1500);
+}
+
+function show_mcd() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('mcd').innerHTML;
+}
+
+function hide_mcr() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_mcr, 1500);
+}
+
+function show_mcr() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('mcr').innerHTML;
+}
+
+function hide_adc() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_adc, 1500);
+}
+
+function show_adc() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('adc').innerHTML;
+}
+
+function hide_udc() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_udc, 1500);
+}
+
+function show_udc() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('udc').innerHTML;
+}
+
+
+
+
+</script>
+</body>
+
+</html>

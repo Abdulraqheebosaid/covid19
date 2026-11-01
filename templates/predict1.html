@@ -1,0 +1,27 @@
+{% include "header_user.html" %}
+
+<div class="content">
+    <br>
+    <form action="{{ url_for('user_bp.predict')}}" method="POST">
+    <h2>Get Sentiment</h2><br><br><br><br>
+
+        <h3>Enter the tweet</h3><br><br>
+         <textarea name="text1" placeholder="Enter the tweet: ...." rows="5" cols="109"></textarea><br><br><br><br>
+        <input type="image" name="submit" src="static/img/sub.png" class="send"/>
+        <br><br>
+
+        <br><br>
+        </form>
+        {% if final %}
+        <div>
+            <h2>The Sentiment of</h2> '{{ text1 }}' :<h1>{{ sentiment }}</h1><br>
+            <h2>Sentiment score is {{ final}}% positive !</h2>
+
+        {% else %}
+            <p></p>
+        {% endif %}
+        </div>
+
+<div class="clr"></div>
+    </form>
+</div>
